@@ -1,4 +1,5 @@
 #  Soccer Player Re-Identification System
+https://github.com/user-attachments/assets/7ea57982-1cae-432c-9c9d-0209c150cb00
 
 This project performs real-time **player detection**, **tracking**, and **re-identification** in soccer videos. It combines:
 
