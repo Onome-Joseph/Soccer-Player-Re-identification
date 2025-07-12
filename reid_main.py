@@ -1,5 +1,5 @@
 """Detection process"""
-
+import os
 import torch
 import gdown
 import numpy as np
@@ -9,13 +9,17 @@ from ultralytics import YOLO
 from torchreid.utils import FeatureExtractor
 from deep_sort_realtime.deepsort_tracker import DeepSort
 
-# Download from Google Drive using file ID
-url = 'https://drive.google.com/uc?id=1XyzAbCDEFG123456789'
-output = 'best.pt'
-gdown.download(url, output, quiet=False)    # Load model from the downloaded file
+# Check if model already exists locally
+model_path = "best.pt"
+if not os.path.exists(model_path):
+    print("Downloading model from Google Drive...")
+    url = 'https://drive.google.com/uc?id=1Sunq9NeZqWpkXOICwc_RDcSWE5RA5Ml1'
+    gdown.download(url, model_path, quiet=False)
+else:
+    print("Model already exists locally.")
 
-# Initialize YOLO model
-model = YOLO('best.pt')
+# Load the model
+model = YOLO(model_path)
 
 video_path = '/15sec_input_720p.mp4'
 target_video_path = '/15sec_input_720p_result.mp4'
