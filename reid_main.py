@@ -18,7 +18,7 @@ gdown.download(url, output, quiet=False)    # Load model from the downloaded fil
 model = YOLO('best.pt')
 
 video_path = '/15sec_input_720p.mp4'
-target_video_path = '/15sec_input_720p_reid_9.mp4'
+target_video_path = '/15sec_input_720p_result.mp4'
 
 ball_id = 0  # Class ID for ball
 
