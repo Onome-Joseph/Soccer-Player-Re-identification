@@ -1,6 +1,7 @@
 """Detection process"""
 
 import torch
+import gdown
 import numpy as np
 from tqdm import tqdm
 import supervision as sv
@@ -8,8 +9,15 @@ from ultralytics import YOLO
 from torchreid.utils import FeatureExtractor
 from deep_sort_realtime.deepsort_tracker import DeepSort
 
+# Download from Google Drive using file ID
+url = 'https://drive.google.com/uc?id=1XyzAbCDEFG123456789'
+output = 'best.pt'
+gdown.download(url, output, quiet=False)    # Load model from the downloaded file
+
 # Initialize YOLO model
-model =YOLO('/best.pt')
+model = YOLO('best.pt')
+
+# Initialize YOLO model
 video_path = '/15sec_input_720p.mp4'
 target_video_path = '/15sec_input_720p_reid_9.mp4'
 
