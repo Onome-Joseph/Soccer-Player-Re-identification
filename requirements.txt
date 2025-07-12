@@ -1,0 +1,7 @@
+torch, torchvision
+opencv-python
+ultralytics
+deep_sort_realtime
+scikit-learn
+numpy, matplotlib
+git+https://github.com/KaiyangZhou/deep-person-reid.git
