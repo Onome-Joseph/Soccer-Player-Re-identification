@@ -17,7 +17,6 @@ gdown.download(url, output, quiet=False)    # Load model from the downloaded fil
 # Initialize YOLO model
 model = YOLO('best.pt')
 
-# Initialize YOLO model
 video_path = '/15sec_input_720p.mp4'
 target_video_path = '/15sec_input_720p_reid_9.mp4'
 
